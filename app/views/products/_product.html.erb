@@ -1,0 +1,31 @@
+<div id="<%= dom_id product %>">
+  <p>
+    <h1><%= link_to product.name.capitalize, product.url, target: "_blank" %></h1>
+  </p>
+
+  <p>
+    <strong>Old Price:</strong>
+    <%= product.old_price %>
+  </p>
+
+  <p>
+    <strong>Current price:</strong>
+    <%= product.current_price %>
+  </p>
+
+  <p>
+    <%= image_tag(product.image_url) %>
+  </p>
+
+  <p>
+    <strong>Reviews count:</strong>
+    <%= product.reviews_count %>
+  </p>
+
+  <p>
+    <%= link_to "Show this product", product %>
+  </p>
+
+</div>
+
+<hr>

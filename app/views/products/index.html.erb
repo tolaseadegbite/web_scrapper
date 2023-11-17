@@ -1,0 +1,13 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Products</h1>
+
+<%= button_to 'Scrape', scrape_products_path %>
+
+<div id="products">
+  <% @products.each do |product| %>
+    <%= render product %>
+  <% end %>
+</div>
+
+<%= link_to "New product", new_product_path %>
