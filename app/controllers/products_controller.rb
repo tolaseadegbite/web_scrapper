@@ -2,10 +2,11 @@ class ProductsController < ApplicationController
   before_action :set_product, only: %i[ show edit update destroy ]
 
   def scrape
-    url = 'https://ng.oraimo.com/products/power/power-banks.html'
+    url = 'https://ng.oraimo.com/oraimo-freepods-lite-40-hour-playtime-enc-true-wireless-earbuds.html'
     response = ProductsSpider.process(url)
     if response[:status] == :completed && response[:error].nil?
       flash.now[:notice] = "Successfully scraped url"
+      redirect_to products_path
     else
       flash.now[:alert] = response[:error]
     end
